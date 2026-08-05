@@ -122,11 +122,12 @@ static const char *menu[] =
 #define MENU_SCROLL       8
 #define MENU_SLEEP        9
 #define MENU_SLEEPMODE    10
-#define MENU_LOADEIBI     11
-#define MENU_USBMODE      12
-#define MENU_BLEMODE      13
-#define MENU_WIFIMODE     14
-#define MENU_ABOUT        15
+#define MENU_HIZAIR       11
+#define MENU_LOADEIBI     12
+#define MENU_USBMODE      13
+#define MENU_BLEMODE      14
+#define MENU_WIFIMODE     15
+#define MENU_ABOUT        16
 
 
 int8_t settingsIdx = MENU_BRIGHTNESS;
@@ -144,6 +145,7 @@ static const char *settings[] =
   "Scroll Dir.",
   "Sleep",
   "Sleep Mode",
+  "AIR Device",
   "Load EiBi",
   "USB Port",
   "Bluetooth",
