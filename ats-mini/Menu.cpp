@@ -122,7 +122,7 @@ static const char *menu[] =
 #define MENU_SCROLL       8
 #define MENU_SLEEP        9
 #define MENU_SLEEPMODE    10
-#define MENU_HIZAIR       11
+#define MENU_HIZ_AIR      11
 #define MENU_LOADEIBI     12
 #define MENU_USBMODE      13
 #define MENU_BLEMODE      14
@@ -145,13 +145,36 @@ static const char *settings[] =
   "Scroll Dir.",
   "Sleep",
   "Sleep Mode",
-  "AIR Device",
+  "110M DCV",
   "Load EiBi",
   "USB Port",
   "Bluetooth",
   "Wi-Fi",
   "About",
 };
+
+//
+// 110MHz DCV
+//
+// Defaults to false (disabled) every time the device turns on.
+bool hiZAirEnabled = false; 
+
+void doHiZAir(int16_t enc)
+{
+  if (enc != 0) {
+    // Toggles state for the current session only
+    hiZAirEnabled = !hiZAirEnabled;
+  }
+}
+int getFirstBandIdx() {
+  return currentSettings.hiZAirEnabled ? 0 : 1;
+}
+
+// Replaces original getTotalBands()
+int getTotalBands() {
+  int total = ITEM_COUNT(bands);
+  return currentSettings.hiZAirEnabled ? total : (total - 1);
+}
 
 //
 // FM Region Menu
