@@ -40,11 +40,12 @@
 #define CMD_SCROLL     0x2900 // |
 #define CMD_SLEEP      0x2A00 // |
 #define CMD_SLEEPMODE  0x2B00 // |
-#define CMD_LOADEIBI   0x2C00 // |
-#define CMD_USBMODE    0x2D00 // |
-#define CMD_BLEMODE    0x2E00 // |
-#define CMD_WIFIMODE   0x2F00 // |
-#define CMD_ABOUT      0x3000 //-+
+#define CMD_HIZ_AIR    0x2C00 // |
+#define CMD_LOADEIBI   0x2D00 // |
+#define CMD_USBMODE    0x2E00 // |
+#define CMD_BLEMODE    0x2F00 // |
+#define CMD_WIFIMODE   0x3000 // |
+#define CMD_ABOUT      0x3100 //-+
 
 // UI Layouts
 #define UI_DEFAULT  0
@@ -132,5 +133,6 @@ void doCal(int16_t enc);
 void doStep(int16_t enc);
 void doMode(int16_t enc);
 void doBand(int16_t enc);
+void doHiZAir(int16_t enc);
 
 #endif // MENU_H
